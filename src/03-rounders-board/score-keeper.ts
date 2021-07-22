@@ -1,47 +1,121 @@
 export enum Team {
-    WedmoreWarriors,
-    CheedarCheese
+  WedmoreWarriors = "WedmoreWarriors",
+  CheddarCheese = "CheddarCheese",
 }
 
-export class ScoreKeeper {
-    wedmoreScore = 0;
-    cheddarScore = 0;
+interface ITeamCounter {
+  [team: string]: number;
+}
 
-    scoreSingleWedmore() {
-        this.wedmoreScore += 1;
+abstract class AbstractKeeper {
+  protected teamCounter: ITeamCounter;
+
+  constructor(home: Team, away: Team) {
+    this.teamCounter = {
+      [home]: 0,
+      [away]: 0,
+    };
+  }
+
+  public totals(): string {
+    let msg: string = "";
+
+    for (const teamName in this.teamCounter) {
+      msg += `${teamName} = ${this.teamCounter[teamName]}\t`;
     }
 
-    scoreSingleCheddar() {
-        this.cheddarScore += 1;
-    }
+    return msg;
+  }
 
-    scoreCoupleWedmora() {
-        this.wedmoreScore += 2;
-    }
+  public get counter(): ITeamCounter {
+    return this.teamCounter;
+  }
+}
 
-    scorecoupleCheddar() {
-        this.cheddarScore += 2;
-    }
+export class ScoreKeeper extends AbstractKeeper {
+  private outKeeper: OutKeeper;
 
-    scoreTrebleWedmore() {
-        this.wedmoreScore += 3;
-    }
+  constructor(home: Team, away: Team, outKeeper: OutKeeper) {
+    super(home, away);
+    this.outKeeper = outKeeper;
+  }
 
-    scoreTrebleCheddar() {
-        this.cheddarScore += 3;
-    }
+  public score(teamName: Team, points: number): void {
+    if (!this.isValidPoint(points))
+      throw new Error("Not a valid number of points");
 
-    score_Four_Wedmore() {
-        this.wedmoreScore += 4;
-    }
+    if (!this.outKeeper.isAllowedToBat(teamName))
+      throw new Error(`${teamName} is no longer allowed to bat`);
 
-    score_Four_Cheddar() {
-        this.cheddarScore += 4;
-    }
+    this.teamCounter[teamName] += points;
+  }
 
+  private isValidPoint(points: number): boolean {
+    return points > 0 && points <= 4;
+  }
+}
 
-    SCORECARD() {
-        return `Cheddar = ${this.cheddarScore}\t` + `Wedmore = ${this.wedmoreScore}`;
-    }
+export class OutKeeper extends AbstractKeeper {
+  public out(teamName: Team): void {
+    if (!this.isAllowedToBat(teamName))
+      throw new Error(`${teamName} is no longer allowed to bat`);
 
+    this.teamCounter[teamName] += 1;
+  }
+
+  public isAllowedToBat(teamName: Team): boolean {
+    return this.teamCounter[teamName] < 3;
+  }
+}
+
+export class ScoreBoard {
+  private home: Team;
+  private away: Team;
+  private scoreKeeper: ScoreKeeper;
+  private outKeeper: OutKeeper;
+
+  constructor(
+    home: Team,
+    away: Team,
+    scoreKeeper: ScoreKeeper,
+    outKeeper: OutKeeper
+  ) {
+    this.home = home;
+    this.away = away;
+    this.scoreKeeper = scoreKeeper;
+    this.outKeeper = outKeeper;
+  }
+
+  private partialScoreBoard(
+    ownVenue: boolean,
+    teamName: Team,
+    runs: number,
+    outs: number
+  ): string {
+    let msg: string = `${ownVenue ? "Home" : "Away"}\t${teamName}\n`;
+    msg += `Runs\t${runs}\n`;
+    msg += `Outs\t${outs}\n`;
+
+    return msg;
+  }
+
+  public totals(): string {
+    const runs: ITeamCounter = this.scoreKeeper.counter;
+    const outs: ITeamCounter = this.outKeeper.counter;
+    const home: Team = this.home;
+    const away: Team = this.away;
+
+    let scoreBoard: string = this.partialScoreBoard(
+      true,
+      home,
+      runs[home],
+      outs[home]
+    );
+
+    scoreBoard += "vs\n";
+
+    scoreBoard += this.partialScoreBoard(false, away, runs[away], outs[away]);
+
+    return scoreBoard;
+  }
 }
