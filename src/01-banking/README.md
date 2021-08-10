@@ -5,7 +5,7 @@ A local Bank `Alibastair Bank` has decided to ditch pen and paper, and start to 
 
 ## Your Task
 Your task is to create a class `Account` which has the following methods;
-`deposit(number); withdraw(number); printStatement()`
+`deposit(number, date); withdraw(number, date); printStatement()`
 
 The output of `printStatement()` should look something like this;
 
