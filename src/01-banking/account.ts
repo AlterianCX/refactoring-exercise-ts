@@ -1,5 +1,12 @@
-export const printStatement = () => {
-    return `Date\tAmount\tBalance\n` +
-    `12/01/2020\t+500\t500\n` +
-    `13/01/2020\t-250\t250\n`;
-}
+/**
+ * Requirements:
+ * - an interface `GenericAccount` with the following methods:
+ *   + `withdraw`
+ *   + `deposit`
+ *   + `transactionHistory`
+ *   + `getBalance`
+ *   + `getLastTransaction`
+ *
+ * - a class `BankAccount` that implements the `GenericAccount` interface
+ * - properties on `BankAccount` should be strictly private
+ */

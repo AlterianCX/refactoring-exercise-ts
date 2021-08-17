@@ -4,24 +4,25 @@
 
 A local Bank 'Alibastair Bank' has decided to ditch pen and paper, and start to record transactions on a computer!
 
-## Your Task
+## Requirements
 
-Your task is to create a class 'Account' which has the following methods;
-
-```ts
-deposit(number, date);
-withdraw(number, date);
-printStatement();
-```
-
-The output of `printStatement()` should look something like this;
-
-```txt
-Date        Amount      Balance
-12/01/20    +500        500
-13/01/20    -250        250
-```
+- a class `BankAccount` that implements the following:
+  - `getBalance()`
+    - should have a starting balance of 0
+  - `transactionHistory()`
+    - should return an empty array when there are no transactions
+    - should return a non-empty array when transactions have been made
+    - should contain properties date, amount, and balance for each transaction
+  - `deposit()`
+    - should allow deposits
+    - should not allow deposits of 0 or less
+  - `withdraw()`
+    - should allow withdrawls
+    - should not allow withdrawls of 0 or less
+  - `getLastTransaction()`
+    - should contain properties date, amount, and balance
+- any properties on `BankAccount` should be strictly private in the transpiled JavaScript
 
 ## Rules
 
-Stick to Typescript as your language, the rest is up to you.
+Stick to Typescript and do not use 3rd party resources.
