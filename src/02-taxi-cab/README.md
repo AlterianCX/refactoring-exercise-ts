@@ -1,4 +1,4 @@
-# Taxi-Cab `Kata`
+# Taxi-Cab Kata
 
 ## Introduction
 
@@ -9,7 +9,6 @@ between two points so that they can better estimate fuel expenditure.
 ## Your Task
 
 Your task is to write a function `manhattanDistance(Point, Point)` that returns the Manhatten Distance between the two points.
-
 
 ## Rules
 
