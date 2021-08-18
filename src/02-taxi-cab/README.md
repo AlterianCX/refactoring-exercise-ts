@@ -2,15 +2,13 @@
 
 ## Introduction
 
-A local taxi-cab would like you to programme them a method which will
-calculate the [Manhattan Distance](https://en.wikipedia.org/wiki/Taxicab_geometry) 
-between two points so that they can better estimate fuel expenditure.
+A local taxi-cab would like you to write a program which calculates the [Manhattan Distance](https://en.wikipedia.org/wiki/Taxicab_geometry) between two points so that they can better estimate fuel expenditure.
 
-## Your Task
+## Requirements
 
-Your task is to write a function `manhattanDistance(Point, Point)` that returns the Manhatten Distance between the two points.
+- manhattan()
+  - should return the Manhattan distance between two points
 
 ## Rules
 
-* The class `Point` is immutable (its state cannot be changed after instantiation).
-* The class `Point` has no public properties (the internal state cannot be read from outside the class).
+Stick to Typescript and do not use 3rd party resources.
