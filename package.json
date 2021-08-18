@@ -6,7 +6,7 @@
 		"test": "mocha -r ts-node/register src/**/*.spec.ts",
 		"test:01-banking": "mocha -r ts-node/register src/01-banking/*.spec.ts",
 		"test:02-taxi-cab": "mocha -r ts-node/register src/02-taxi-cab/*.spec.ts",
-		"test:03-cricket-board": "mocha -r ts-node/register src/03-rounders-board/*.spec.ts"
+		"test:03-rounders-board": "mocha -r ts-node/register src/03-rounders-board/*.spec.ts"
 	},
 	"repository": {
 		"type": "git",
