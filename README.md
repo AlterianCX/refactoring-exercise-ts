@@ -1,27 +1,41 @@
-This REPO contains various programming challenges/refactoring tasks, to be submitted alongside a CV for job applications at Alterian (as a UI Developer). Be sure to read each tasks "README" for further details.
+# Refactoring Challenge for Alterian Web Development Job Application
 
-## Getting Started
+Thanks for taking the time to look at this refactoring exercise. This is to be submitted alongside a CV as part of a job application
+for a web developer.
 
-#### Clone the Repository
+## Instructions
+
+In this fictitious scenario your company has developed some "middle-man" software which allows a client (e.g. a footwear company), to promote offers to their customers.
+
+Your software is designed to output "offers" (in this case a 'percent off' value) to customers of the client, along with a piece of content id. It does this for both "Mail" and "Html" output channels. The value of these offers varies on (a) the amount a customer has spent, (b) the number of orders the customer has purchased and (c) the channel they're viewing the offer on.
+
+Imagine that right now this software is run nightly to provide a batch file for an mail/email generating system to send customers offers, and also another batch file to give to the website to drive a dynamic "advert banner". This system doesn't need to deal with the batch file, just the method to produce the data as expected.
+
+Refactor the code so that;
+- It can handle more/different levels of offers.
+- It can respond to an individual "customer" request for a HTML piece of content (i.e. for this user, what content do i serve and what's the offer value, as well as the batch version).
+
+Refactor the code so that it'll be easy to update/maintain in the future, and you're confident that it works.
+
+Try to be pragmatic in your refactoring, keep it as simple as possible and try to avoid over-engineering the solution.
+
+## Building and Running
+
+### Clone the Repository
 ``
 git clone git@bitbucket.org:alterian/ui-refactor-tasks.git
 ``
-#### Install the Dependencies
+### Install the Dependencies
 ``
 npm i
 ``
+### Running Tests
+``
+npm test
+``
 
-#### Tackling the tasks
-There are currently 3 tasks 
+## Submitting your code/solutions
+Once you're done, zip your source code up (don't include `node_modules`) and send it to `ui-dev@alterian.com`, along with your name and CV, and/or attach it to the job application.
 
-* [01-Banking](./src/01-banking)
-* [02-Taxi-Cab](./src/02-taxi-cab)
-* [03-Rounders-Board](./src/03-rounders-board)
-
-Located in the `/src` directory.
-
-#### Submitting your code/solutions
-Once you're done, zip the your source code up (don't include `node_modules`) and send it to `ui-dev@alterian.com`, along with your name and CV.
-
-#### Then what?
+## Then what?
 One of the team members will have a look over your code, and we'll get back to you, either with an invitation for an interview, or with some suggested feedback based on the exercises to help improve going forward.

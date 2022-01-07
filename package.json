@@ -1,19 +1,16 @@
 {
-  "name": "ui-katas",
-  "version": "1.0.0",
-  "description": "This REPO contains various programming challenges, and refactoring tasks. Be sure to read each tasks \"README\" for further details.",
+  "name": "ngx-refactoring-challenge",
+  "version": "2.0.0",
+  "description": "Be sure to read each tasks \"README\" for further details.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -r ts-node/register src/**/*.spec.ts",
-    "test:01-banking": "mocha -r ts-node/register src/01-banking/*.spec.ts",
-    "test:02-taxi-cab": "mocha -r ts-node/register src/02-taxi-cab/*.spec.ts",
-    "test:03-cricket-board": "mocha -r ts-node/register src/03-rounders-board/*.spec.ts"
+    "test": "mocha -r ts-node/register src/**/*.spec.ts"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AlterianCX/ui-katas"
   },
-  "author": "ui-devs@alterian.com",
+  "author": "ui-dev@alterian.com",
   "license": "ISC",
   "homepage": "https://github.com/AlterianCX/ui-katas",
   "devDependencies": {
