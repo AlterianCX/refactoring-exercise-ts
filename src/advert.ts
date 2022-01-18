@@ -30,13 +30,13 @@ export class Advert {
                 if (this._customers[i].numberOfOrders > 10) {
                     mailInstructions.push({
                         customerId: this._customers[i].id,
-                        contentId: this._offers[0].mailContentId,
+                        contentId: this._offers[0]._mailContentId,
                         percentOffNextPurchase: 0.15
                     });
                 } else {
                     mailInstructions.push({
                         customerId: this._customers[i].id,
-                        contentId: this._offers[0].mailContentId,
+                        contentId: this._offers[0]._mailContentId,
                         percentOffNextPurchase: 0.05
                     });
                 }
@@ -44,13 +44,13 @@ export class Advert {
                 if (this._customers[i].numberOfOrders > 7) {
                     mailInstructions.push({
                         customerId: this._customers[i].id,
-                        contentId: this._offers[1].mailContentId,
+                        contentId: this._offers[1]._mailContentId,
                         percentOffNextPurchase: 0.175
                     });
                 } else {
                     mailInstructions.push({
                         customerId: this._customers[i].id,
-                        contentId: this._offers[1].mailContentId,
+                        contentId: this._offers[1]._mailContentId,
                         percentOffNextPurchase: 0.07
                     });
                 }
@@ -58,13 +58,13 @@ export class Advert {
                 if (this._customers[i].numberOfOrders > 4) {
                     mailInstructions.push({
                         customerId: this._customers[i].id,
-                        contentId: this._offers[2].mailContentId,
+                        contentId: this._offers[2]._mailContentId,
                         percentOffNextPurchase: 0.20
                     });
                 } else {
                     mailInstructions.push({
                         customerId: this._customers[i].id,
-                        contentId: this._offers[2].mailContentId,
+                        contentId: this._offers[2]._mailContentId,
                         percentOffNextPurchase: 0.08
                     });
                 }
@@ -72,13 +72,13 @@ export class Advert {
                 if (this._customers[i].numberOfOrders > 2) {
                     mailInstructions.push({
                         customerId: this._customers[i].id,
-                        contentId: this._offers[3].mailContentId,
+                        contentId: this._offers[3]._mailContentId,
                         percentOffNextPurchase: 0.25
                     });
                 } else {
                     mailInstructions.push({
                         customerId: this._customers[i].id,
-                        contentId: this._offers[3].mailContentId,
+                        contentId: this._offers[3]._mailContentId,
                         percentOffNextPurchase: 0.10
                     });
                 }
@@ -102,13 +102,13 @@ export class Advert {
                 if (this._customers[i].numberOfOrders > 10) {
                     htmlInstructions.push({
                         customerId: this._customers[i].id,
-                        contentId: this._offers[0].htmlContentID,
+                        contentId: this._offers[0].htmlCONTENTID,
                         percentOffNextPurchase: amountToDiscountMap.get(Person.OneThousand)[1]
                     });
                 } else {
                     htmlInstructions.push({
                         customerId: this._customers[i].id,
-                        contentId: this._offers[0].htmlContentID,
+                        contentId: this._offers[0].htmlCONTENTID,
                         percentOffNextPurchase: amountToDiscountMap.get(Person.OneThousand)[0]
                     });
                 }
@@ -116,13 +116,13 @@ export class Advert {
                 if (this._customers[i].numberOfOrders > 7) {
                     htmlInstructions.push({
                         customerId: this._customers[i].id,
-                        contentId: this._offers[1].htmlContentID,
+                        contentId: this._offers[1].htmlCONTENTID,
                         percentOffNextPurchase: amountToDiscountMap.get(Person.FiveThousand)[1]
                     });
                 } else {
                     htmlInstructions.push({
                         customerId: this._customers[i].id,
-                        contentId: this._offers[1].htmlContentID,
+                        contentId: this._offers[1].htmlCONTENTID,
                         percentOffNextPurchase: amountToDiscountMap.get(Person.FiveThousand)[0]
                     });
                 }
@@ -130,13 +130,13 @@ export class Advert {
                 if (this._customers[i].numberOfOrders > 4) {
                     htmlInstructions.push({
                         customerId: this._customers[i].id,
-                        contentId: this._offers[2].htmlContentID,
+                        contentId: this._offers[2].htmlCONTENTID,
                         percentOffNextPurchase: amountToDiscountMap.get(Person.TenThousand)[1]
                     });
                 } else {
                     htmlInstructions.push({
                         customerId: this._customers[i].id,
-                        contentId: this._offers[2].htmlContentID,
+                        contentId: this._offers[2].htmlCONTENTID,
                         percentOffNextPurchase: amountToDiscountMap.get(Person.TenThousand)[0]
                     });
                 }
@@ -144,13 +144,13 @@ export class Advert {
                 if (this._customers[i].numberOfOrders > 2) {
                     htmlInstructions.push({
                         customerId: this._customers[i].id,
-                        contentId: this._offers[3].htmlContentID,
+                        contentId: this._offers[3].htmlCONTENTID,
                         percentOffNextPurchase: amountToDiscountMap.get(-1)[1]
                     });
                 } else {
                     htmlInstructions.push({
                         customerId: this._customers[i].id,
-                        contentId: this._offers[3].htmlContentID,
+                        contentId: this._offers[3].htmlCONTENTID,
                         percentOffNextPurchase: amountToDiscountMap.get(-1)[0]
                     });
                 }
