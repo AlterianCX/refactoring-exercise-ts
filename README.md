@@ -9,13 +9,13 @@ In this fictitious scenario your company has developed some "middle-man" softwar
 
 The value of these offers varies on (a) the amount a customer has spent, (b) the number of orders the customer has purchased and (c) the channel (e.g. web or mail) they're viewing the offer on.
 
-`Advert.addCustomer()` is used by the clients system to add some customer data.
-`Advert.mail()` is used by the client to generate the adverts for all added customers for the 'mail' output.
-`Advert.htmlBanner()` is used by the client to generate the adverts for all added customers for the 'html' output.
+- `Advert.addCustomer()` is used by the clients system to add some customer data.
+- `Advert.mail()` is used by the client to generate the adverts for all added customers for the 'mail' output.
+- `Advert.htmlBanner()` is used by the client to generate the adverts for all added customers for the 'html' output.
 
 Refactor the code so that;
-- It can handle more/different levels of offers (e.g. there is currently 4 offers, can you add a 5th, and/or make it easier to add any number more).
-- It can respond to an individual "customer" request for a HTML piece of content (i.e. for this user, what content do i serve and what's the offer value).
+- It can handle more/different levels of "Offers" (e.g. there is currently 4 offers, can you add a 5th, and/or make it easier to add any number more).
+- It can respond to an individual "customer" request for a HTML piece of content (i.e. for this user, what content do i serve and what's the offer value). 
 
 Refactor the code so that it'll be easy to update/maintain in the future, and you're confident that it works.
 
