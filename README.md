@@ -1,7 +1,6 @@
-# Refactoring Challenge for Alterian Web Development Job Application
+# Refactoring Challenge for Alterian (TS Version)
 
-Thanks for taking the time to look at this refactoring exercise. This is to be submitted alongside a CV as part of a job application
-for a web developer.
+Thanks for taking the time to look at this refactoring exercise. This is to be submitted alongside a CV as part of a job application.
 
 ## Instructions
 
@@ -25,7 +24,7 @@ Try to be pragmatic in your refactoring, keep it as simple as possible and try t
 
 ### Clone the Repository
 ``
-gh repo clone AlterianCX/ui-katas
+gh repo clone AlterianCX/refactoring-exercise-ts
 ``
 ### Install the Dependencies
 ``
