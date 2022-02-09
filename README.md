@@ -2,6 +2,9 @@
 
 Thanks for taking the time to look at this refactoring exercise. This is to be submitted alongside a CV as part of a job application.
 
+## Submitting your code/solutions
+Once you're done, zip your source code up (don't include `node_modules`) and send it to `ui-dev@alterian.com`, along with your name and CV, and/or attach it to the job application.
+
 ## Instructions
 
 In this fictitious scenario your company has developed some "middle-man" software which allows a client (e.g. a footwear company), to promote offers (/adverts) to their customers, this is contained within 3 classes; Person, Offer and Advert.
